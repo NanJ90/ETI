@@ -1,0 +1,46 @@
+{
+    "teachers": [
+        {
+            "name": "Teacher 1",
+            "subject": "Math"
+        },
+        {
+            "name": "Teacher 2",
+            "subject": "Science"
+        }
+    ],
+    "classes": [
+        {
+            "name": "Class 1",
+            "students": 25
+        },
+        {
+            "name": "Class 2",
+            "students": 30
+        },
+        {
+            "name": "Class 3",
+            "students": 20
+        }
+    ],
+    "timetable": {
+        "classroom": "Room 101",
+        "schedule": {
+            "Monday": {
+                "8:00 AM - 9:00 AM": "Class 1",
+                "9:00 AM - 10:00 AM": "Class 2",
+                "10:00 AM - 11:00 AM": "Class 3"
+            },
+            "Tuesday": {
+                "8:00 AM - 9:00 AM": "Class 2",
+                "9:00 AM - 10:00 AM": "Class 3",
+                "10:00 AM - 11:00 AM": "Class 1"
+            },
+            "Wednesday": {
+                "8:00 AM - 9:00 AM": "Class 3",
+                "9:00 AM - 10:00 AM": "Class 1",
+                "10:00 AM - 11:00 AM": "Class 2"
+            }
+        }
+    }
+}
