@@ -8,4 +8,3 @@ def load_data(path:str)-> dict:
 if __name__ == '__main__':
     #reading JSON file
     data = load_data('../data/small_data.json')
-        
