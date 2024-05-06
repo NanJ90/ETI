@@ -9,38 +9,40 @@
             "subject": "Science"
         }
     ],
-    "classes": [
+    "subjects": [
         {
-            "name": "Class 1",
+            "name": "Math",
             "students": 25
         },
         {
-            "name": "Class 2",
+            "name": "Science",
             "students": 30
-        },
-        {
-            "name": "Class 3",
-            "students": 20
         }
     ],
-    "timetable": {
-        "classroom": "Room 101",
-        "schedule": {
-            "Monday": {
-                "8:00 AM - 9:00 AM": "Class 1",
-                "9:00 AM - 10:00 AM": "Class 2",
-                "10:00 AM - 11:00 AM": "Class 3"
-            },
-            "Tuesday": {
-                "8:00 AM - 9:00 AM": "Class 2",
-                "9:00 AM - 10:00 AM": "Class 3",
-                "10:00 AM - 11:00 AM": "Class 1"
-            },
-            "Wednesday": {
-                "8:00 AM - 9:00 AM": "Class 3",
-                "9:00 AM - 10:00 AM": "Class 1",
-                "10:00 AM - 11:00 AM": "Class 2"
-            }
+    "classroom_availability" : [
+        {
+            "room": "Room 1",
+            "day": "Monday",
+            "time": "9:00 AM",
+            "available": true
+        },
+        {   
+            "room": "Room 1",
+            "day": "Monday",
+            "time": "10:00 AM",
+            "available": false
+        },
+        {
+            "room": "Room 1",
+            "day": "Tuesday",
+            "time": "9:00 AM",
+            "available": true
+        },
+        {   
+            "room": "Room 1",
+            "day": "Tuesday",
+            "time": "10:00 AM",
+            "available": true
         }
-    }
+    ]
 }
