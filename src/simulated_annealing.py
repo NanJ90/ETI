@@ -68,15 +68,25 @@ class CSP:
         return None
 
 # Define your CSP problem
-csp = CSP(variables, domains, constraints)
+teachers = schedule['teachers']
+subjects = schedule['subjects']
+classroom_availability = schedule['classroom_availability']
 
-# Use simulated annealing to find an initial solution
-initial_solution = simulated_annealing(problem, T0, tau, tmax)
+variables = [(teacher, subject,classroom) for teacher in teachers for subject in subjects for classroom in classroom_availability]
+domains = {}
+# for variable in variables:
+    # domains[variable] = [classroom for classroom, availability in classroom_availability.items() if availability[subjects] == 1]
+print(variables)        
+print(domains)
+# csp = CSP(variables, domains, constraints,'../data/small_data.json')
 
-# If the solution from simulated annealing satisfies all constraints, return it
-if csp.is_solution(initial_solution):
-    print(initial_solution)
-else:
-    # If not, use backtracking to find a solution that satisfies all constraints
-    solution = csp.backtracking_search(initial_solution)
-    print(solution)
+# # Use simulated annealing to find an initial solution
+# initial_solution = simulated_annealing(problem, T0, tau, tmax)
+
+# # If the solution from simulated annealing satisfies all constraints, return it
+# if csp.is_solution(initial_solution):
+#     print(initial_solution)
+# else:
+#     # If not, use backtracking to find a solution that satisfies all constraints
+#     solution = csp.backtracking_search(initial_solution)
+#     print(solution)
