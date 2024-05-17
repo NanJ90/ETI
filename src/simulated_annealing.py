@@ -9,5 +9,5 @@ if __name__ == "__main__":
     iteration_limit = 1000
 
     best_schedule, best_value = simulated_annealing(objective_function, initial_schedule, initial_temperature, cooling_rate, stopping_temperature, iteration_limit)
-
+    
     print(f"Best schedule: {best_schedule}, Conflicts: {best_value}")

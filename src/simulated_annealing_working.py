@@ -6,7 +6,7 @@ import csv
 from Configuration import load_config
 
 # Load configuration
-config = load_config('data.cfg')
+config = load_config('../configuration files/data.cfg')
 
 # Extract parameters from config
 initial_temperature = float(config['SimulatedAnnealing']['initial_temperature'])
@@ -96,7 +96,7 @@ def translate_schedule(best_schedule):
         })
     return translated
 
-def save_schedule_to_csv(schedule, file_path='best_schedule.csv'):
+def save_schedule_to_csv(schedule, file_path='../output/best_schedule_sa.csv'):
     keys = schedule[0].keys()
     with open(file_path, 'w', newline='') as output_file:
         dict_writer = csv.DictWriter(output_file, fieldnames=keys)

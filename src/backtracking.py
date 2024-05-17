@@ -6,7 +6,7 @@ from Configuration import load_config
 from sa_utils import initialize_schedule, objective_function, neighbor_solution, acceptance_probability, simulated_annealing
 
 # Load configuration
-config = load_config('data.cfg')
+config = load_config('../configuration files/data.cfg')
 
 # Extract parameters from config
 professors = {k.split('_')[1]: v for k, v in config.items('Professors')}
@@ -84,6 +84,7 @@ def no_teacher_overlap(assignment_value, assignment):
     for key, value in assignment.items():
         t, s, r, d, ti = value
         if teacher == t and day == d and time == ti:
+            print(f"Teacher overlap detected: {teacher} has overlapping classes at {day} {time}")
             return False
     return True
 
@@ -93,15 +94,25 @@ def no_room_overlap(assignment_value, assignment):
     for key, value in assignment.items():
         t, s, r, d, ti = value
         if room == r and day == d and time == ti:
+            print(f"Room overlap detected: {room} has overlapping classes at {day} {time}")
             return False
     return True
 
+
 def translate_schedule(best_schedule):
     translated = []
-    for (teacher_id, course_id), (room_id, day, time_slot) in best_schedule.items():
+    # Adding logging to check the structure of best_schedule
+    print("Translating schedule. Best schedule format:", best_schedule)
+    for key, value in best_schedule.items():
+        try:
+            teacher_id, course_id = key
+            room_id, day, time_slot = value[2], value[3], value[4]
+        except ValueError:
+            print(f"Unexpected format: {key}, {value}")
+            continue
         translated.append({
-            'Professor': professors[teacher_id],
-            'Course': courses[course_id],
+            'Professor': professors.get(teacher_id, f"Unknown ({teacher_id})"),
+            'Course': courses.get(course_id, f"Unknown ({course_id})"),
             'Room': room_id,
             'Day': day,
             'Time Slot': time_slot
@@ -158,7 +169,7 @@ if not optimal_schedule:
 if optimal_schedule:
     translated_schedule = translate_schedule(optimal_schedule)
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    file_path = f'best_schedule_{timestamp}.csv'
+    file_path = f'../output/best_schedule_{timestamp}.csv'
     save_schedule_to_csv(translated_schedule, file_path)
     print(f'Best schedule saved to CSV: {file_path}')
     print(f'Solution found using: {method_used}')

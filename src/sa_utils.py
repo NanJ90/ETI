@@ -3,7 +3,7 @@ import math
 from Configuration import load_config
 
 # Load configuration
-config = load_config('data.cfg')
+config = load_config('../configuration files/data.cfg')
 
 # Extract parameters from config
 rooms = {k.split('_')[0]: k.lower() for k, v in config.items('Rooms')}  # Use room ids as-is

@@ -6,7 +6,7 @@ from Configuration import load_config
 from sa_utils import initialize_schedule, objective_function, neighbor_solution, acceptance_probability, simulated_annealing
 
 # Load configuration
-config = load_config('data.cfg')
+config = load_config('../configuration files/data.cfg')
 
 # Extract parameters from config
 professors = {k.split('_')[1]: v for k, v in config.items('Professors')}
@@ -137,7 +137,7 @@ if not optimal_schedule:
 if optimal_schedule:
     translated_schedule = translate_schedule(optimal_schedule)
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    file_path = f'best_schedule_{timestamp}.csv'
+    file_path = f'../output/best_schedule_{timestamp}.csv'
     save_schedule_to_csv(translated_schedule, file_path)
     print(f'Best schedule saved to CSV: {file_path}')
     print(f'Solution found using: {method_used}')

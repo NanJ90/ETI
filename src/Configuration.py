@@ -13,5 +13,5 @@ def load_config(file_path):
     return config
 
 if __name__ == "__main__":
-    config = load_config('data.cfg')
+    config = load_config('../configuration files/data.cfg')
     print(config['SimulatedAnnealing'])

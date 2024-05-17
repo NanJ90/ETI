@@ -7,7 +7,7 @@ class TestSimulatedAnnealing(unittest.TestCase):
 
     def setUp(self):
         # Load configuration
-        self.config = load_config('data.cfg')
+        self.config = load_config('../configuration files/data.cfg')
         self.initial_temperature = float(self.config['SimulatedAnnealing']['initial_temperature'])
         self.cooling_rate = float(self.config['SimulatedAnnealing']['cooling_rate'])
         self.stopping_temperature = 0.1  # Assuming default stopping temperature
