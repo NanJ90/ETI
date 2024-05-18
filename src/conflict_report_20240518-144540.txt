@@ -1,0 +1,308 @@
+Schedule Conflict Report
+========================
+
+Professor Conflicts:
+--------------------
+Conflict for Professor Nancy Harris at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Valerie Salitan at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Katya Henry at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Rebecca Archer at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Trevor Buckley at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Jennifer Aaron at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Gillian Auger at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Scott Cogan at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Rena Gregory at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Katelyn Talty at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Nathan Nichols at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Conflict for Professor Karter Caldwell at Thursday 50
+  Course: Physics, Room: r13
+  Course: Advanced Algorithms, Room: r13
+  Course: Database Management, Room: r13
+  Course: Discrete Mathematics, Room: r13
+  Course: Software Design and Analysis, Room: r13
+  Course: Computer Vision, Room: r13
+  Course: Machine Learning, Room: r13
+  Course: Visualizations, Room: r13
+  Course: Applied Chemistry, Room: r13
+  Course: Computer Theory, Room: r13
+  Course: Network Analysis, Room: r13
+
+Room Conflicts:
+----------------
+Conflict for Room r13 at Thursday 50
+  Professor: Nancy Harris, Course: Physics
+  Professor: Nancy Harris, Course: Advanced Algorithms
+  Professor: Nancy Harris, Course: Database Management
+  Professor: Nancy Harris, Course: Discrete Mathematics
+  Professor: Nancy Harris, Course: Software Design and Analysis
+  Professor: Nancy Harris, Course: Computer Vision
+  Professor: Nancy Harris, Course: Machine Learning
+  Professor: Nancy Harris, Course: Visualizations
+  Professor: Nancy Harris, Course: Applied Chemistry
+  Professor: Nancy Harris, Course: Computer Theory
+  Professor: Nancy Harris, Course: Network Analysis
+  Professor: Valerie Salitan, Course: Calculus
+  Professor: Valerie Salitan, Course: Physics
+  Professor: Valerie Salitan, Course: Advanced Algorithms
+  Professor: Valerie Salitan, Course: Database Management
+  Professor: Valerie Salitan, Course: Discrete Mathematics
+  Professor: Valerie Salitan, Course: Software Design and Analysis
+  Professor: Valerie Salitan, Course: Computer Vision
+  Professor: Valerie Salitan, Course: Machine Learning
+  Professor: Valerie Salitan, Course: Visualizations
+  Professor: Valerie Salitan, Course: Applied Chemistry
+  Professor: Valerie Salitan, Course: Computer Theory
+  Professor: Valerie Salitan, Course: Network Analysis
+  Professor: Katya Henry, Course: Calculus
+  Professor: Katya Henry, Course: Physics
+  Professor: Katya Henry, Course: Advanced Algorithms
+  Professor: Katya Henry, Course: Database Management
+  Professor: Katya Henry, Course: Discrete Mathematics
+  Professor: Katya Henry, Course: Software Design and Analysis
+  Professor: Katya Henry, Course: Computer Vision
+  Professor: Katya Henry, Course: Machine Learning
+  Professor: Katya Henry, Course: Visualizations
+  Professor: Katya Henry, Course: Applied Chemistry
+  Professor: Katya Henry, Course: Computer Theory
+  Professor: Katya Henry, Course: Network Analysis
+  Professor: Rebecca Archer, Course: Calculus
+  Professor: Rebecca Archer, Course: Physics
+  Professor: Rebecca Archer, Course: Advanced Algorithms
+  Professor: Rebecca Archer, Course: Database Management
+  Professor: Rebecca Archer, Course: Discrete Mathematics
+  Professor: Rebecca Archer, Course: Software Design and Analysis
+  Professor: Rebecca Archer, Course: Computer Vision
+  Professor: Rebecca Archer, Course: Machine Learning
+  Professor: Rebecca Archer, Course: Visualizations
+  Professor: Rebecca Archer, Course: Applied Chemistry
+  Professor: Rebecca Archer, Course: Computer Theory
+  Professor: Rebecca Archer, Course: Network Analysis
+  Professor: Trevor Buckley, Course: Calculus
+  Professor: Trevor Buckley, Course: Physics
+  Professor: Trevor Buckley, Course: Advanced Algorithms
+  Professor: Trevor Buckley, Course: Database Management
+  Professor: Trevor Buckley, Course: Discrete Mathematics
+  Professor: Trevor Buckley, Course: Software Design and Analysis
+  Professor: Trevor Buckley, Course: Computer Vision
+  Professor: Trevor Buckley, Course: Machine Learning
+  Professor: Trevor Buckley, Course: Visualizations
+  Professor: Trevor Buckley, Course: Applied Chemistry
+  Professor: Trevor Buckley, Course: Computer Theory
+  Professor: Trevor Buckley, Course: Network Analysis
+  Professor: Jennifer Aaron, Course: Calculus
+  Professor: Jennifer Aaron, Course: Physics
+  Professor: Jennifer Aaron, Course: Advanced Algorithms
+  Professor: Jennifer Aaron, Course: Database Management
+  Professor: Jennifer Aaron, Course: Discrete Mathematics
+  Professor: Jennifer Aaron, Course: Software Design and Analysis
+  Professor: Jennifer Aaron, Course: Computer Vision
+  Professor: Jennifer Aaron, Course: Machine Learning
+  Professor: Jennifer Aaron, Course: Visualizations
+  Professor: Jennifer Aaron, Course: Applied Chemistry
+  Professor: Jennifer Aaron, Course: Computer Theory
+  Professor: Jennifer Aaron, Course: Network Analysis
+  Professor: Gillian Auger, Course: Calculus
+  Professor: Gillian Auger, Course: Physics
+  Professor: Gillian Auger, Course: Advanced Algorithms
+  Professor: Gillian Auger, Course: Database Management
+  Professor: Gillian Auger, Course: Discrete Mathematics
+  Professor: Gillian Auger, Course: Software Design and Analysis
+  Professor: Gillian Auger, Course: Computer Vision
+  Professor: Gillian Auger, Course: Machine Learning
+  Professor: Gillian Auger, Course: Visualizations
+  Professor: Gillian Auger, Course: Applied Chemistry
+  Professor: Gillian Auger, Course: Computer Theory
+  Professor: Gillian Auger, Course: Network Analysis
+  Professor: Scott Cogan, Course: Calculus
+  Professor: Scott Cogan, Course: Physics
+  Professor: Scott Cogan, Course: Advanced Algorithms
+  Professor: Scott Cogan, Course: Database Management
+  Professor: Scott Cogan, Course: Discrete Mathematics
+  Professor: Scott Cogan, Course: Software Design and Analysis
+  Professor: Scott Cogan, Course: Computer Vision
+  Professor: Scott Cogan, Course: Machine Learning
+  Professor: Scott Cogan, Course: Visualizations
+  Professor: Scott Cogan, Course: Applied Chemistry
+  Professor: Scott Cogan, Course: Computer Theory
+  Professor: Scott Cogan, Course: Network Analysis
+  Professor: Rena Gregory, Course: Calculus
+  Professor: Rena Gregory, Course: Physics
+  Professor: Rena Gregory, Course: Advanced Algorithms
+  Professor: Rena Gregory, Course: Database Management
+  Professor: Rena Gregory, Course: Discrete Mathematics
+  Professor: Rena Gregory, Course: Software Design and Analysis
+  Professor: Rena Gregory, Course: Computer Vision
+  Professor: Rena Gregory, Course: Machine Learning
+  Professor: Rena Gregory, Course: Visualizations
+  Professor: Rena Gregory, Course: Applied Chemistry
+  Professor: Rena Gregory, Course: Computer Theory
+  Professor: Rena Gregory, Course: Network Analysis
+  Professor: Katelyn Talty, Course: Calculus
+  Professor: Katelyn Talty, Course: Physics
+  Professor: Katelyn Talty, Course: Advanced Algorithms
+  Professor: Katelyn Talty, Course: Database Management
+  Professor: Katelyn Talty, Course: Discrete Mathematics
+  Professor: Katelyn Talty, Course: Software Design and Analysis
+  Professor: Katelyn Talty, Course: Computer Vision
+  Professor: Katelyn Talty, Course: Machine Learning
+  Professor: Katelyn Talty, Course: Visualizations
+  Professor: Katelyn Talty, Course: Applied Chemistry
+  Professor: Katelyn Talty, Course: Computer Theory
+  Professor: Katelyn Talty, Course: Network Analysis
+  Professor: Nathan Nichols, Course: Calculus
+  Professor: Nathan Nichols, Course: Physics
+  Professor: Nathan Nichols, Course: Advanced Algorithms
+  Professor: Nathan Nichols, Course: Database Management
+  Professor: Nathan Nichols, Course: Discrete Mathematics
+  Professor: Nathan Nichols, Course: Software Design and Analysis
+  Professor: Nathan Nichols, Course: Computer Vision
+  Professor: Nathan Nichols, Course: Machine Learning
+  Professor: Nathan Nichols, Course: Visualizations
+  Professor: Nathan Nichols, Course: Applied Chemistry
+  Professor: Nathan Nichols, Course: Computer Theory
+  Professor: Nathan Nichols, Course: Network Analysis
+  Professor: Karter Caldwell, Course: Calculus
+  Professor: Karter Caldwell, Course: Physics
+  Professor: Karter Caldwell, Course: Advanced Algorithms
+  Professor: Karter Caldwell, Course: Database Management
+  Professor: Karter Caldwell, Course: Discrete Mathematics
+  Professor: Karter Caldwell, Course: Software Design and Analysis
+  Professor: Karter Caldwell, Course: Computer Vision
+  Professor: Karter Caldwell, Course: Machine Learning
+  Professor: Karter Caldwell, Course: Visualizations
+  Professor: Karter Caldwell, Course: Applied Chemistry
+  Professor: Karter Caldwell, Course: Computer Theory
+  Professor: Karter Caldwell, Course: Network Analysis
+

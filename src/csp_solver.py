@@ -12,14 +12,14 @@ config = load_config('../configuration files/data.cfg')
 professors = {k.split('_')[1]: v for k, v in config.items('Professors')}
 courses = {k.split('_')[1]: v for k, v in config.items('Courses')}
 rooms = {k: room_details.split(',')[0].strip().lower() for k, room_details in config.items('Rooms')}  # Use room ids as-is
-classroom_availability = [
-    {
+classroom_availability = []
+for room, details in config.items('Rooms'):
+    lab, capacity = details.split(',')
+    classroom_availability.append({
         'room': room,
         'day': random.choice(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']),
         'time': [i for i in range(1, 51)]  # Assume 50 time slots for simplicity
-    }
-    for room, details in config.items('Rooms')
-]
+    })
 
 class CSP:
     def __init__(self, variables, domains, constraints):
@@ -28,29 +28,25 @@ class CSP:
         self.constraints = constraints
 
     def is_solution(self, assignment):
-        # Check if an assignment is a solution
         for variable, value in assignment.items():
             if not self.constraints.get(variable, lambda x, y: True)(value, assignment):
                 return False
         return True
 
     def most_constrained_variable(self, assignment):
-        # Choose the variable with the fewest legal values
         unassigned = [v for v in self.variables if v not in assignment]
         return min(unassigned, key=lambda var: len(self.domains[var]))
 
     def least_constraining_value(self, variable, assignment):
-        # Choose the value that rules out the fewest choices for the neighboring variables
         return sorted(self.domains[variable], key=lambda val: self.count_conflicts(variable, val, assignment))
 
     def count_conflicts(self, variable, value, assignment):
-        # Count the number of conflicts the value causes
         temp_assignment = assignment.copy()
         temp_assignment[variable] = value
         return sum(1 for var in self.variables if var in temp_assignment and not self.constraints[var](temp_assignment[var], temp_assignment))
 
     def iterative_backtracking_search(self):
-        stack = [{}]  # Stack to store partial assignments
+        stack = [{}]
         while stack:
             assignment = stack.pop()
             if len(assignment) == len(self.variables):
@@ -65,7 +61,7 @@ class CSP:
         return None
 
     def iterative_backtracking_search_relaxed(self):
-        stack = [{}]  # Stack to store partial assignments
+        stack = [{}]
         while stack:
             assignment = stack.pop()
             if len(assignment) == len(self.variables):
@@ -79,7 +75,6 @@ class CSP:
         return None
 
 def no_teacher_overlap(assignment_value, assignment):
-    # Ensure no teacher has overlapping classes
     teacher, subject, room, day, time = assignment_value
     for key, value in assignment.items():
         t, s, r, d, ti = value
@@ -89,7 +84,6 @@ def no_teacher_overlap(assignment_value, assignment):
     return True
 
 def no_room_overlap(assignment_value, assignment):
-    # Ensure no room has overlapping classes
     teacher, subject, room, day, time = assignment_value
     for key, value in assignment.items():
         t, s, r, d, ti = value
@@ -100,7 +94,6 @@ def no_room_overlap(assignment_value, assignment):
 
 def translate_schedule(best_schedule):
     translated = []
-    # Adding logging to check the structure of best_schedule
     print("Translating schedule. Best schedule format:", best_schedule)
     for key, value in best_schedule.items():
         try:
@@ -125,7 +118,7 @@ def save_schedule_to_csv(schedule, file_path):
         dict_writer.writeheader()
         dict_writer.writerows(schedule)
 
-# Define your CSP problem
+# Define CSP problem
 teachers = list(professors.keys())
 subjects = list(courses.keys())
 
@@ -141,20 +134,31 @@ constraints = {
 
 csp = CSP(variables, domains, constraints)
 
-# Attempt 1: Use iterative backtracking with heuristics
-print("Attempting with backtracking and heuristics...")
-optimal_schedule = csp.iterative_backtracking_search()
-method_used = "Backtracking with Heuristics"
+# Step 1: Use DRL-guided heuristic
+try:
+    from drl import drl_guided_heuristic
+    print("Attempting with DRL-guided heuristic...")
+    optimal_schedule = drl_guided_heuristic(variables, domains, constraints)
+    method_used = "DRL-guided Heuristic"
+except ImportError:
+    print("DRL-guided heuristic module not found. Skipping this step.")
+    optimal_schedule = None
 
-# Attempt 2: If no solution, use iterative backtracking with relaxed constraints
+# Step 2: Use iterative backtracking with relaxed constraints if DRL-guided heuristic fails
 if not optimal_schedule:
-    print("No solution found with backtracking and heuristics. Trying with relaxed constraints...")
+    print("No solution found with DRL-guided heuristic. Trying with backtracking and relaxed constraints...")
     optimal_schedule = csp.iterative_backtracking_search_relaxed()
     method_used = "Backtracking with Relaxed Constraints"
 
-# Attempt 3: If still no solution, use simulated annealing
+# Step 3: Use standard iterative backtracking if previous methods fail
 if not optimal_schedule:
-    print("No solution found with relaxed constraints. Trying simulated annealing...")
+    print("No solution found with relaxed constraints. Trying with standard backtracking...")
+    optimal_schedule = csp.iterative_backtracking_search()
+    method_used = "Standard Backtracking"
+
+# Step 4: If all methods fail, use simulated annealing
+if not optimal_schedule:
+    print("No solution found with standard backtracking. Trying simulated annealing...")
     method_used = "Simulated Annealing"
     initial_schedule = initialize_schedule()
     initial_temperature = 1000
@@ -164,7 +168,7 @@ if not optimal_schedule:
 
     optimal_schedule, _ = simulated_annealing(objective_function, initial_schedule, initial_temperature, cooling_rate, stopping_temperature, iteration_limit)
 
-# Translate the schedule to descriptive data and save to CSV
+# Translate and save schedule
 if optimal_schedule:
     translated_schedule = translate_schedule(optimal_schedule)
     timestamp = time.strftime("%Y%m%d-%H%M%S")

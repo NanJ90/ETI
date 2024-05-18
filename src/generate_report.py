@@ -1,5 +1,6 @@
 import csv
 import collections
+import time
 
 def load_schedule(file_path):
     schedule = []
@@ -23,18 +24,19 @@ def find_conflicts(schedule):
         time_slot = entry['Time Slot']
         
         # Check for professor conflicts
-        key = (professor, day, time_slot)
-        if key in time_slot_format:
-            conflicts['professor_conflicts'][key].append(entry)
+        prof_key = (professor, day, time_slot)
+        room_key = (room, day, time_slot)
+        
+        if prof_key in time_slot_format:
+            conflicts['professor_conflicts'][prof_key].append(entry)
         else:
-            time_slot_format[key].append(entry)
+            time_slot_format[prof_key].append(entry)
         
         # Check for room conflicts
-        key = (room, day, time_slot)
-        if key in time_slot_format:
-            conflicts['room_conflicts'][key].append(entry)
+        if room_key in time_slot_format:
+            conflicts['room_conflicts'][room_key].append(entry)
         else:
-            time_slot_format[key].append(entry)
+            time_slot_format[room_key].append(entry)
 
     return conflicts
 
@@ -62,11 +64,12 @@ def generate_report(conflicts, report_file):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 2:
-        print("Usage: python validate.py <schedule_file>")
+        print("Usage: python generate_report.py <schedule_file>")
         sys.exit(1)
 
     schedule_file = sys.argv[1]
-    report_file = "conflict_report.txt"
+    
+    report_file = "conflict_report_%s.txt" % time.strftime("%Y%m%d-%H%M%S")
 
     schedule = load_schedule(schedule_file)
     conflicts = find_conflicts(schedule)
