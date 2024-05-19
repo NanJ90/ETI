@@ -2,7 +2,7 @@ import random
 import csv
 import time
 import math
-from Configuration import load_config
+from ConfigForSA import load_config
 from sa_utils import initialize_schedule, objective_function, neighbor_solution, acceptance_probability, simulated_annealing
 
 # Load configuration

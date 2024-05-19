@@ -1,6 +1,6 @@
 import csv
 import collections
-
+import time
 def load_schedule(file_path):
     schedule = []
     with open(file_path, 'r') as file:
@@ -66,7 +66,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     schedule_file = sys.argv[1]
-    report_file = "conflict_report.txt"
+    report_file = f'conflicts_report_{time.strftime("%Y%m%d-%H%M%S")}.txt'
 
     schedule = load_schedule(schedule_file)
     conflicts = find_conflicts(schedule)

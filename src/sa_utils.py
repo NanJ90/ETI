@@ -1,6 +1,6 @@
 import random
 import math
-from Configuration import load_config
+from ConfigForSA import load_config
 
 # Load configuration
 config = load_config('../configuration files/data.cfg')

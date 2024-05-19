@@ -113,11 +113,10 @@ The configuration file contains all the necessary data, including:
 - **no_room_overlap()**: Ensures no room has overlapping classes.
 - **iterative_backtracking_search()**: Performs iterative backtracking to find a solution.
 - **iterative_backtracking_search_relaxed()**: Attempts to find a solution with relaxed constraints.
-To resolve the conflicts, we considered the following strategies:
+  To resolve the conflicts, we considered the following strategies:
+
 1. Increase the number of rooms or adjust room availability to accommodate more classes.
-
 2. Consider relaxing some constraints, if possible, to find a feasible schedule.
-
 3. Implement advanced scheduling algorithms such as Simulated Annealing, Genetic Algorithms, or Constraint Satisfaction Problem (CSP) solvers to generate conflict-free schedules.
 
 ### Validation Script (`validate.py`)
@@ -153,6 +152,10 @@ Sometimes the backtracking algorithm may not find a feasible solution due to the
 Best schedule saved to CSV: ../output/best_schedule_20240516-211254.csv
 Solution found using: Backtracking with Relaxed Constraints
 ![1715908353018](image/report/1715908353018.png)
+
+![1716146616171](image/report/1716146616171.png)
+
+![1716089597560](image/report/1716089597560.png)
 
 ### Validation
 

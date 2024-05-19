@@ -1,0 +1,22 @@
+Group,Day,Hour,Room,Course,Professor
+ClassA,4,1,R13,Calculus,Nancy Harris
+ClassA,2,1,R50,Physics,Valerie Salitan
+ClassA,3,2,R53,Advanced Algorithms,Katya Henry
+"ClassA, ClassA",3,1,R50,Machine Learning,Scott Cogan
+ClassA,5,3,R48,Applied Chemistry,Katelyn Talty
+ClassB,2,1,R13,Database Management,Rebecca Archer
+ClassB,2,2,R13,Discrete Mathematics,Trevor Buckley
+"ClassB, ClassB",3,3,R50,Software Design and Analysis,Jennifer Aaron
+ClassB,5,1,R48,Computer Theory,Nathan Nichols
+ClassB,2,3,R53,Network Analysis,Karter Caldwell
+"ClassC, ClassC",1,2,R13,Computer Vision,Gillian Auger
+"ClassC, ClassC",2,4,R50,Machine Learning,Scott Cogan
+"ClassC, ClassC",5,3,R13,Visualizations,Rena Gregory
+ClassC,4,1,R48,Advanced Algorithms,Katya Henry
+ClassC,3,3,R13,Physics,Valerie Salitan
+ClassD,3,2,R48,Applied Chemistry,Katelyn Talty
+ClassD,3,4,R53,Computer Theory,Nathan Nichols
+ClassD,1,4,R50,Network Analysis,Karter Caldwell
+ClassD,5,1,R13,Calculus,Nancy Harris
+ClassD,2,3,R50,Discrete Mathematics,Trevor Buckley
+ClassD,4,3,R50,Advanced Algorithms,Katya Henry
