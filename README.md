@@ -30,10 +30,4 @@ These requirements can be categorized by their importance:
 
 By addressing these constraints and preferences, ETI aims to intelligently and efficiently generate timetables that meet all critical requirements while optimizing for various other factors.
 
-## Getting Started
-To get started with the ETI project, follow these steps:
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/yourusername/eti.git
-   cd eti
