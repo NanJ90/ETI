@@ -1,4 +1,4 @@
-# ETI: Intelligent Timetable Generator
+# ETI: Intelligent Timetable Intelligence
 
 Welcome to the ETI project repository! This project focuses on developing an intelligent system for automatic timetable generation using advanced heuristic algorithms, specifically Genetic Algorithms (GA) and Constraint Satisfaction Problem (CSP) techniques with Simulated Annealing (SA).
 
