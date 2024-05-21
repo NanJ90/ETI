@@ -9,8 +9,8 @@ Watch the [demo video](https://www.youtube.com/watch?v=bMu7USLMZ0E) to see ETI i
 The goal of this project is to create a system, named ETI, that generates optimal timetables by balancing various constraints and preferences.
 
 ### Key Features
-- **Simulated Annealing (SA):** Used for initial solution estimates due to its ability to avoid local minima and explore a wide range of possible solutions. SA will be benchmarked against other methods such as backtracking, iterative refinement, and random start strategies.
-- **Genetic Algorithms (GA):** Leveraged for their evolutionary approach, utilizing processes like crossover and mutation to achieve highly optimal outcomes.
+- **Backtracking with simulated annealing (SA):** Used for initial solution estimates due to its ability to avoid local minima and explore a wide range of possible solutions. SA will be benchmarked against other methods such as backtracking, iterative refinement, and random start strategies.
+- **Genetic Algorithms (GA):** Leveraged for their evolutionary approach, utilizing processes like crossover and mutation to achieve highly optimal outcomes. 
 
 ### Timetable Constraints and Preferences
 Creating an effective class schedule requires consideration of numerous requirements, including:
