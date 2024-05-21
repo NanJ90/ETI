@@ -3,7 +3,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QComboBox, QPushButton, QLabel, QFileDialog
 from Configuration import Configuration
-from backtracking_sa import solve_backtracking, solve_simulated_annealing
+from scheduler import solve_backtracking, solve_simulated_annealing
 
 class MainWindow(QMainWindow):
     def __init__(self):

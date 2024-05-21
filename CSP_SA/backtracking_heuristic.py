@@ -1,9 +1,7 @@
 import random
 import csv
 import time
-import math
-from Configuration import load_config
-from sa_utils import initialize_schedule, objective_function, neighbor_solution, acceptance_probability, simulated_annealing
+from ConfigForSA import load_config
 
 # Load configuration
 config = load_config('../configuration files/data.cfg')
@@ -12,14 +10,14 @@ config = load_config('../configuration files/data.cfg')
 professors = {k.split('_')[1]: v for k, v in config.items('Professors')}
 courses = {k.split('_')[1]: v for k, v in config.items('Courses')}
 rooms = {k: room_details.split(',')[0].strip().lower() for k, room_details in config.items('Rooms')}  # Use room ids as-is
-classroom_availability = [
-    {
+classroom_availability = []
+for room, details in config.items('Rooms'):
+    lab, capacity = details.split(',')
+    classroom_availability.append({
         'room': room,
         'day': random.choice(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']),
         'time': [i for i in range(1, 51)]  # Assume 50 time slots for simplicity
-    }
-    for room, details in config.items('Rooms')
-]
+    })
 
 class CSP:
     def __init__(self, variables, domains, constraints):
@@ -64,27 +62,12 @@ class CSP:
                     stack.append(new_assignment)
         return None
 
-    def iterative_backtracking_search_relaxed(self):
-        stack = [{}]  # Stack to store partial assignments
-        while stack:
-            assignment = stack.pop()
-            if len(assignment) == len(self.variables):
-                return assignment
-
-            var = self.most_constrained_variable(assignment)
-            for value in self.least_constraining_value(var, assignment):
-                new_assignment = assignment.copy()
-                new_assignment[var] = value
-                stack.append(new_assignment)
-        return None
-
 def no_teacher_overlap(assignment_value, assignment):
     # Ensure no teacher has overlapping classes
     teacher, subject, room, day, time = assignment_value
     for key, value in assignment.items():
         t, s, r, d, ti = value
         if teacher == t and day == d and time == ti:
-            print(f"Teacher overlap detected: {teacher} has overlapping classes at {day} {time}")
             return False
     return True
 
@@ -94,24 +77,15 @@ def no_room_overlap(assignment_value, assignment):
     for key, value in assignment.items():
         t, s, r, d, ti = value
         if room == r and day == d and time == ti:
-            print(f"Room overlap detected: {room} has overlapping classes at {day} {time}")
             return False
     return True
 
 def translate_schedule(best_schedule):
     translated = []
-    # Adding logging to check the structure of best_schedule
-    print("Translating schedule. Best schedule format:", best_schedule)
-    for key, value in best_schedule.items():
-        try:
-            teacher_id, course_id = key
-            room_id, day, time_slot = value[2], value[3], value[4]
-        except ValueError:
-            print(f"Unexpected format: {key}, {value}")
-            continue
+    for (teacher_id, course_id), (room_id, day, time_slot) in best_schedule.items():
         translated.append({
-            'Professor': professors.get(teacher_id, f"Unknown ({teacher_id})"),
-            'Course': courses.get(course_id, f"Unknown ({course_id})"),
+            'Professor': professors[teacher_id],
+            'Course': courses[course_id],
             'Room': room_id,
             'Day': day,
             'Time Slot': time_slot
@@ -141,28 +115,8 @@ constraints = {
 
 csp = CSP(variables, domains, constraints)
 
-# Attempt 1: Use iterative backtracking with heuristics
-print("Attempting with backtracking and heuristics...")
+# Use iterative backtracking to find a solution
 optimal_schedule = csp.iterative_backtracking_search()
-method_used = "Backtracking with Heuristics"
-
-# Attempt 2: If no solution, use iterative backtracking with relaxed constraints
-if not optimal_schedule:
-    print("No solution found with backtracking and heuristics. Trying with relaxed constraints...")
-    optimal_schedule = csp.iterative_backtracking_search_relaxed()
-    method_used = "Backtracking with Relaxed Constraints"
-
-# Attempt 3: If still no solution, use simulated annealing
-if not optimal_schedule:
-    print("No solution found with relaxed constraints. Trying simulated annealing...")
-    method_used = "Simulated Annealing"
-    initial_schedule = initialize_schedule()
-    initial_temperature = 1000
-    cooling_rate = 0.95
-    stopping_temperature = 0.1
-    iteration_limit = 1000
-
-    optimal_schedule, _ = simulated_annealing(objective_function, initial_schedule, initial_temperature, cooling_rate, stopping_temperature, iteration_limit)
 
 # Translate the schedule to descriptive data and save to CSV
 if optimal_schedule:
@@ -171,6 +125,5 @@ if optimal_schedule:
     file_path = f'../output/best_schedule_{timestamp}.csv'
     save_schedule_to_csv(translated_schedule, file_path)
     print(f'Best schedule saved to CSV: {file_path}')
-    print(f'Solution found using: {method_used}')
 else:
     print("No solution found.")

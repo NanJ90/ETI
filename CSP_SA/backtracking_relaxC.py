@@ -1,7 +1,7 @@
 import random
 import csv
 import time
-from Configuration import load_config
+from ConfigForSA import load_config
 
 # Load configuration
 config = load_config('../configuration files/data.cfg')
@@ -71,15 +71,6 @@ def no_teacher_overlap(assignment_value, assignment):
             return False
     return True
 
-def no_room_overlap(assignment_value, assignment):
-    # Ensure no room has overlapping classes
-    teacher, subject, room, day, time = assignment_value
-    for key, value in assignment.items():
-        t, s, r, d, ti = value
-        if room == r and day == d and time == ti:
-            return False
-    return True
-
 def translate_schedule(best_schedule):
     translated = []
     for (teacher_id, course_id), (room_id, day, time_slot) in best_schedule.items():
@@ -109,8 +100,9 @@ domains = {
     for teacher in teachers for subject in subjects
 }
 constraints = {
-    (teacher, subject): lambda value, assignment: no_teacher_overlap(value, assignment) and no_room_overlap(value, assignment)
+    (teacher, subject): lambda value, assignment: no_teacher_overlap(value, assignment)
     for teacher in teachers for subject in subjects
+    # Relaxed the room overlap constraint temporarily
 }
 
 csp = CSP(variables, domains, constraints)
